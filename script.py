@@ -2,7 +2,7 @@ import csv
 import pywhatkit
 import time
 
-# Configuración importante
+# Configuración
 espera_entre_mensajes = 10  # Segundos entre mensajes para evitar bloqueos
 tiempo_espera_whatsapp = 15  # Tiempo para cargar WhatsApp Web
 
@@ -16,10 +16,10 @@ with open('data.csv', 'r', encoding='utf-8') as file:
     
     for fila in lector_csv:
         try:
-            # Agregar el prefijo del país al número de teléfono
+            # Agregar el prefijo del país al número de teléfono, si es necesario
             numero = fila['numero'].strip()
-            numero = '+591' + numero #Bolivia
-
+            numero = '+591' + numero if not numero.startswith('+') else numero
+            # El formato del numero tendría que contener solo números sin espacios ni caracteres especiales
             
             # Formatear el mensaje personalizado
             mensaje_personalizado = plantilla_mensaje.format(**fila)
