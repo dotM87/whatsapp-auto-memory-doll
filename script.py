@@ -1,9 +1,6 @@
 import csv
 import pywhatkit
 import time
-import os
-os.environ["DISPLAY"] = ":0"
-os.environ["XAUTHORITY"] = "/home/m87/.Xauthority"
 
 # Configuración importante
 espera_entre_mensajes = 10  # Segundos entre mensajes para evitar bloqueos
@@ -19,9 +16,10 @@ with open('data.csv', 'r', encoding='utf-8') as file:
     
     for fila in lector_csv:
         try:
-            # Limpieza y formato del número telefónico
+            # Agregar el prefijo del país al número de teléfono
             numero = fila['numero'].strip()
-            numero = numero.replace('+', '').replace(' ', '').replace('-', '')
+            numero = '591' + numero #Bolivia
+
             
             # Formatear el mensaje personalizado
             mensaje_personalizado = plantilla_mensaje.format(**fila)
