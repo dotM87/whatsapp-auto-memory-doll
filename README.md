@@ -53,4 +53,4 @@ pip install -r requirements.txt
 
 ## Licencia
 
-LICENCE[LICENSE]
+[LICENSE](LICENSE)
