@@ -18,7 +18,7 @@ with open('data.csv', 'r', encoding='utf-8') as file:
         try:
             # Agregar el prefijo del país al número de teléfono
             numero = fila['numero'].strip()
-            numero = '591' + numero #Bolivia
+            numero = '+591' + numero #Bolivia
 
             
             # Formatear el mensaje personalizado
